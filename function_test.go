@@ -36,7 +36,7 @@ func Test_unpackQueryKey_LeftSquareBracketEnd(t *testing.T) {
 func Test_repackArrayQueryKey(t *testing.T) {
 	key := "[hts][0]"
 	target := repackArrayQueryKey(key)
-	if target != "[hts][]" {
+	if target != "[hts]" {
 		t.Error("failed to execute repackArrayQueryKey function")
 	}
 }

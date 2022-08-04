@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/hetiansu5/urlquery"
+	"github.com/nkguoym/urlquery"
 )
 
 func main() {
