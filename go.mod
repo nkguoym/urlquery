@@ -1,3 +1,3 @@
-module github.com/hetiansu5/urlquery
+module github.com/nkguoym/urlquery
 
 go 1.11
