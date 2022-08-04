@@ -59,12 +59,13 @@ func unpackQueryKey(key string) (pre, suf string) {
 }
 
 // if key like `students[0]` , repack it to `students[]`
+// change this to `students`
 func repackArrayQueryKey(key string) string {
 	l := len(key)
 	if l > 0 && key[l-1] == ']' {
 		for l--; l >= 0; l-- {
 			if key[l] == '[' {
-				return key[:l+1] + "]"
+				return key[:l]
 			}
 		}
 	}
