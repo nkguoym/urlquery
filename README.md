@@ -1,14 +1,15 @@
 [![Language](https://img.shields.io/badge/Language-Go-blue.svg)](https://golang.org/)
-[![GoDoc](https://godoc.org/github.com/hetiansu5/urlquery?status.svg)](https://godoc.org/github.com/hetiansu5/urlquery)
-[![Go Report Card](https://goreportcard.com/badge/github.com/hetiansu5/urlquery)](https://goreportcard.com/report/github.com/hetiansu5/urlquery)
-[![License](https://img.shields.io/github/license/hetiansu5/urlquery)](LICENSE)
-[![codecov](https://codecov.io/gh/hetiansu5/urlquery/branch/master/graph/badge.svg?token=N5NWVBHRTY)](https://codecov.io/gh/hetiansu5/urlquery)
+[![GoDoc](https://godoc.org/github.com/nkguoym/urlquery?status.svg)](https://godoc.org/github.com/nkguoym/urlquery)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nkguoym/urlquery)](https://goreportcard.com/report/github.com/nkguoym/urlquery)
+[![License](https://img.shields.io/github/license/nkguoym/urlquery)](LICENSE)
+[![codecov](https://codecov.io/gh/nkguoym/urlquery/branch/master/graph/badge.svg?token=N5NWVBHRTY)](https://codecov.io/gh/nkguoym/urlquery)
 
 ## Introduction
 A URL Query string Encoder and Parser based on go.
 
 - Parse from URL Query string to go structure
-- Encode from go structure to URL Query string
+- Encode from go structure(including ```map[string]interface{}```) to URL Query string
+- The difference with the original version forked is that this repo support the array parameter to arr=v1&arr=v2 instead of arr[]=v1&arr[]=v2
 
 ## Keywords
 x-www-form-urlencoded Query Encoder URL-Query Http-Query go
@@ -64,7 +65,7 @@ func main() {
 
 	//Marshal: from go structure to url query string
 	bytes, _ := urlquery.Marshal(data)
-	//output Id=2&name=http%3A%2F%2Flocalhost%2Ftest.php%3Fid%3D2&Child%5Bstatus%5D=1&p%5Bone%5D=1&Array%5B%5D=2&Array%5B%5D=3&Array%5B%5D=300
+	//output Id=2&name=http%3A%2F%2Flocalhost%2Ftest.php%3Fid%3D2&Child%5Bstatus%5D=1&p%5Bone%5D=1&Array=2&Array=3&Array=300
 	fmt.Println(string(bytes))
 
 	//Unmarshal: from url query  string to go structure
